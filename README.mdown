@@ -1,0 +1,12 @@
+RXCustomTabBar
+===============
+RXCustomTab bar is an example project demonstrating how to implement a custom Tab Bar on iOS devices.  
+
+It is accompanied by two tutorials:
+
+*  [How To Customise the Tab Bar (UITabBar) in an iPhone Application Part 1](http://www.rumexit.co.uk/2010/07/how-to-customise-the-tab-bar-uitabbar-in-an-iphone-application-part-1-of-2/ "How To Customise the Tab Bar (UITabBar) in an iPhone Application Part 1")
+*  [How To Customise the Tab Bar (UITabBar) in an iPhone Application Part 2](http://www.rumexit.co.uk/2010/11/how-to-customise-the-tab-bar-uitabbar-in-an-iphone-application-part-2-of-2/ "How To Customise the Tab Bar (UITabBar) in an iPhone Application Part 2")
+
+The Basics
+==========
+RXCustomTabBar is a sub class of UITabBarController which first hides the original Tab Bar and then creates a fake one over the top which replicates is functionality.
