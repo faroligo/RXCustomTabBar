@@ -8,9 +8,9 @@
 
 #import "RXCustomTabBar.h"
 
-
-
 @implementation RXCustomTabBar
+
+@synthesize btn1, btn2, btn3, btn4;
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -37,7 +37,7 @@
 	UIImage *btnImage = [UIImage imageNamed:@"NavBar_01.png"];
 	UIImage *btnImageSelected = [UIImage imageNamed:@"NavBar_01_s.png"];
 	
-	btn1 = [UIButton buttonWithType:UIButtonTypeCustom]; //Setup the button
+	self.btn1 = [UIButton buttonWithType:UIButtonTypeCustom]; //Setup the button
 	btn1.frame = CGRectMake(0, 430, 80, 50); // Set the frame (size and position) of the button)
 	[btn1 setBackgroundImage:btnImage forState:UIControlStateNormal]; // Set the image for the normal state of the button
 	[btn1 setBackgroundImage:btnImageSelected forState:UIControlStateSelected]; // Set the image for the selected state of the button
@@ -47,7 +47,7 @@
 	// Now we repeat the process for the other buttons
 	btnImage = [UIImage imageNamed:@"NavBar_02.png"];
 	btnImageSelected = [UIImage imageNamed:@"NavBar_02_s.png"];
-	btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.btn2 = [UIButton buttonWithType:UIButtonTypeCustom];
 	btn2.frame = CGRectMake(80, 430, 80, 50);
 	[btn2 setBackgroundImage:btnImage forState:UIControlStateNormal];
 	[btn2 setBackgroundImage:btnImageSelected forState:UIControlStateSelected];
@@ -55,7 +55,7 @@
 	
 	btnImage = [UIImage imageNamed:@"NavBar_03.png"];
 	btnImageSelected = [UIImage imageNamed:@"NavBar_03_s.png"];
-	btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
 	btn3.frame = CGRectMake(160, 430, 80, 50);
 	[btn3 setBackgroundImage:btnImage forState:UIControlStateNormal];
 	[btn3 setBackgroundImage:btnImageSelected forState:UIControlStateSelected];
@@ -63,7 +63,7 @@
 	
 	btnImage = [UIImage imageNamed:@"NavBar_04.png"];
 	btnImageSelected = [UIImage imageNamed:@"NavBar_04_s.png"];
-	btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
+	self.btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
 	btn4.frame = CGRectMake(240, 430, 80, 50);
 	[btn4 setBackgroundImage:btnImage forState:UIControlStateNormal];
 	[btn4 setBackgroundImage:btnImageSelected forState:UIControlStateSelected];
@@ -88,53 +88,48 @@
 	[self selectTab:tagNum];
 }
 
-	
-	- (void)selectTab:(int)tabID
+- (void)selectTab:(int)tabID
+{
+	switch(tabID)
 	{
-		switch(tabID)
-		{
-			case 0:
-				[btn1 setSelected:true];
-				[btn2 setSelected:false];
-				[btn3 setSelected:false];
-				[btn4 setSelected:false];
-				break;
-			case 1:
-				[btn1 setSelected:false];
-				[btn2 setSelected:true];
-				[btn3 setSelected:false];
-				[btn4 setSelected:false];
-				break;
-			case 2:
-				[btn1 setSelected:false];
-				[btn2 setSelected:false];
-				[btn3 setSelected:true];
-				[btn4 setSelected:false];
-				break;
-			case 3:
-				[btn1 setSelected:false];
-				[btn2 setSelected:false];
-				[btn3 setSelected:false];
-				[btn4 setSelected:true];
-				break;
-		}	
-		
-			self.selectedIndex = tabID;
-		
+		case 0:
+			[btn1 setSelected:true];
+			[btn2 setSelected:false];
+			[btn3 setSelected:false];
+			[btn4 setSelected:false];
+			break;
+		case 1:
+			[btn1 setSelected:false];
+			[btn2 setSelected:true];
+			[btn3 setSelected:false];
+			[btn4 setSelected:false];
+			break;
+		case 2:
+			[btn1 setSelected:false];
+			[btn2 setSelected:false];
+			[btn3 setSelected:true];
+			[btn4 setSelected:false];
+			break;
+		case 3:
+			[btn1 setSelected:false];
+			[btn2 setSelected:false];
+			[btn3 setSelected:false];
+			[btn4 setSelected:true];
+			break;
+	}	
 	
-	}
-
-
-
-
-
-- (void)dealloc {
-    [super dealloc];
-	[btn1 dealloc];
-	[btn2 dealloc];
-	[btn3 dealloc];
-	[btn4 dealloc];
+	self.selectedIndex = tabID;
+	
+	
 }
 
+- (void)dealloc {
+	[btn1 release];
+	[btn2 release];
+	[btn3 release];
+	[btn4 release];
+
+    [super dealloc];
+}
 
 @end
