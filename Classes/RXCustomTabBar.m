@@ -31,6 +31,22 @@
 	}
 }
 
+- (void)hideNewTabBar 
+{
+    self.btn1.hidden = 1;
+    self.btn2.hidden = 1;
+    self.btn3.hidden = 1;
+    self.btn4.hidden = 1;
+}
+
+- (void)showNewTabBar 
+{
+    self.btn1.hidden = 0;
+    self.btn2.hidden = 0;
+    self.btn3.hidden = 0;
+    self.btn4.hidden = 0;
+}
+
 -(void)addCustomElements
 {
 	// Initialise our two images

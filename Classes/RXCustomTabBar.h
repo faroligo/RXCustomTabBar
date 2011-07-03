@@ -24,4 +24,7 @@
 -(void) addCustomElements;
 -(void) selectTab:(int)tabID;
 
+-(void) hideNewTabBar;
+-(void) ShowNewTabBar;
+
 @end

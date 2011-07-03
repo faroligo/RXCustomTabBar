@@ -12,6 +12,7 @@
 @implementation FirstViewController
 
 
+
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -43,6 +44,14 @@
 }
 */
 
+- (IBAction)btnPressHide:(id)sender {
+    [self.tabBarController hideNewTabBar];
+}
+
+- (IBAction)btnPressShow:(id)sender {
+    [self.tabBarController showNewTabBar];
+}
+
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
@@ -59,5 +68,6 @@
 - (void)dealloc {
     [super dealloc];
 }
+
 
 @end

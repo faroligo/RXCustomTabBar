@@ -13,4 +13,7 @@
 
 }
 
+- (IBAction)btnPressHide:(id)sender;
+- (IBAction)btnPressShow:(id)sender;
+
 @end
